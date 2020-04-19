@@ -1,14 +1,13 @@
 //programm for fiinding the greatest number among the three numbers using function ....class methos
-
 #include <iostream>
 using namespace std;
-
-
-class Matrix
-{  int x;
-  int arr[10];
-  public:
-  Matrix(int a)
+class arrayPrint
+{
+private:
+    int x;
+    int arr[50];
+public:
+  arrayPrint(int a)
   {
       x=a;
   }
@@ -16,7 +15,7 @@ class Matrix
   {
       for(int i=0;i<x;i++)
       {
-              cin>>arr[i];
+        cin>>arr[i];
       }
   }
   void display()
@@ -33,7 +32,7 @@ int main()
     int a;
     cout<<"enter size of array: ";
     cin>>a;
-    Matrix obj(a);
+    arrayPrint obj(a);
     cout<<"enter values of array: ";
     obj.get_array();
     cout<<"array entered is: ";
