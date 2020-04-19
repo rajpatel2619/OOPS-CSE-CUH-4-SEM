@@ -1,41 +1,39 @@
 //programm for fiinding the greatest number among the three numbers using function ....class methos
 #include <iostream>
 using namespace std;
-class arrayPrint
+class greatorNumber
 {
 private:
-    int x;
-    int arr[50];
+    int x,y,z;
+
 public:
-  arrayPrint(int a)
-  {
-      x=a;
+  greatorNumber(int a[3]){
+  x=a[0];
+  y=a[1];
+  z=a[2];
   }
-  void get_array()
-  {
-      for(int i=0;i<x;i++)
-      {
-        cin>>arr[i];
-      }
-  }
-  void display()
-  {
-     for(int i=0;i<x;i++)
-      {
-              cout<<arr[i]<<" ";
-      }
+  checkGreatest(){
+  if(x>y && x>z)
+    cout<<"greatest value is: "<< x;
+
+  else if(y>x && y>z)
+    cout<<"greatest value is: "<<y;
+
+  else if(z>x && z>y)
+    cout<<"greatest value is: "<<z;
+
+  else
+    cout<<"something went wrong";
   }
 };
-
 int main()
 {
-    int a;
-    cout<<"enter size of array: ";
-    cin>>a;
-    arrayPrint obj(a);
-    cout<<"enter values of array: ";
-    obj.get_array();
-    cout<<"array entered is: ";
-    obj.display();
+    int a[3],i;
+    cout<<"enter three numbers: ";
+    for(i=0;i<3;i++){
+    cin>>a[i];
+    }
+    greatorNumber obj(a);
+    obj.checkGreatest();
     return 0;
 }
