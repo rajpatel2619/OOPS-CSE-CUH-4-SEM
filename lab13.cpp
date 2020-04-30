@@ -1,47 +1,49 @@
-//program to demonestrate multilevel inhereatence
+//program to demonstrate multilevel inheritance..
+//by checking if a number is less or greater than 100
 #include<iostream>
 using namespace std;
-class Student //base class
+class random
 {
     protected:
-    int marks;
+    int number;
         public:
-        void accept()
+        void getNumber()
         {
-        cout<<"enter your marks"<<endl;
-        cin>>marks;
+        cout<<"Enter random number"<<endl;
+        cin>>number;
         }
 };
-class test :public Student//1st inherated class
+class test :public random
 {
 protected:
-int p=0;
+int res=0;
 public:
-void check()
+void checkNumber()
 {
-    if(marks>60)
+    if(number<100)
     {
-        p=1;
+        res=1;
     }}};
-class result :public test//second inherated class
+class result :public test
 {
 public:
-void print()
+void printNumber()
 {
-    if(p==1)
+    if(res==1)
     {
-        cout<<"you have passed"<<endl;
+        cout<<"your number is less than 100"<<endl;
     }
     else
     {
-    cout<<"you have not passed";
+    cout<<"its greator than 100";
     }
     }};
+
     int main()
-    {
-        result r;
-        r.accept();
-        r.check();
-        r.print();
+{
+        result num;
+        num.getNumber();
+        num.checkNumber();
+        num.printNumber();
         return 0;
-        }
+    }

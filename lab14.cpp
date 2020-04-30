@@ -1,53 +1,53 @@
-
+// program to show hybrid inheritance..
 #include<iostream>
 using namespace std;
-class arethematic
+class rectangle
 {   protected:
-    int num1,num2;
+    int length,width;
         public:
-            void getdata()
+            void getData()
             {
-                cout<<"enter first no for arethematic operation: "<<endl;
-                cin>>num1;
-                cout<<"enter second no for arethematic operation: "<<endl;
-                cin>>num2;
+                cout<<"Enter the length of the rectangle "<<endl;
+                cin>>length;
+                cout<<"Enter the width for the rectangle : "<<endl;
+                cin>>width;
             }
 };
-class Plus :virtual public arethematic
+class area :virtual public rectangle
 {
     protected:
-    int sum;
+    int a;
         public:
-            void add()
+            void aCal()
             {
-                sum=num1+num2;
+                a=length*width;
             }
 };
-class Minus : virtual public arethematic
+class perimeter : virtual public rectangle
 {
     protected:
-    int sub;
+    int p;
         public:
-        void subtract()
+        void pCal()
         {
-            sub= num1-num2;
+            p= 2*(length+width);
         }
 };
-class result :public Plus ,public Minus
+class result :public area ,public perimeter
 {
     public:
         void display()
         {
-            cout<<"\n sum of "<<num1<<" and "<<num2 <<" = "<<sum;
-            cout<<"\n difference of "<<num1<<" and "<<num2<<" = "<<sub;
+            cout<<"\n area of rectangle is: "<<a;
+            cout<<"\n perimeter of rectangle is: "<<p;
         }
 
 };
 int main()
 {
-    result z;
-    z.getdata();
-    z.add();
-    z.subtract();
-    z.display();
+    result r;
+    r.getData();
+    r.aCal();
+    r.pCal();
+    r.display();
 }

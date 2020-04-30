@@ -1,34 +1,33 @@
-
-
+//program for the concept of container-ship
 #include<iostream>
 using namespace std;
-class A
+class first
    {
-          int a;
+          int n1;
           public:
-          void get();
+          void getDataFirst();
     };
-class B
+class second
 {
-      int b;
-      A t;         // object t of class A is declare in class B
+      int n2;
+      first x;
       public:
-      void getdata();
+      void getDataSecond();
 };
-void A :: get()
-{  cout<<" \nenter for first class \n";
-   cin>>a;
-   cout<<"result from ur first class \n"<<a;
+void first :: getDataFirst()
+{  cout<<"\nEnter any number for the first class  \n";
+   cin>>n1;
+   cout<<"this is from first class \n"<<n1;
 }
-void B :: getdata()
-{   cout<<"enter for second classs\n";
-   cin>>b;
-   cout<<"result from second class \n"<<b;
-   t.get();                  //calling of get() of class A in getdata() of class B
+void second :: getDataSecond()
+{   cout<<"Enter any number for the second class \n";
+   cin>>n2;
+   cout<<"this is from second class \n"<<n2;
+   x.getDataFirst();
 }
 int main()
 {
-   B ab;
-   ab.getdata();
+   second check;
+   check.getDataSecond();
    return 0;
 }

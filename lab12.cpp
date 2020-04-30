@@ -2,38 +2,37 @@
 
 #include<iostream>
 using namespace std;
-class length//base class 1
+class length
 {
     public:
     int x;
     void getx()
     {
-        cout<<"enter the length of rectangle: "<<endl;
+        cout<<"Enter the length of rectangle: "<<endl;
         cin>>x;
     }
 };
-class breadth//base class 2
+class width
 {
 public:
 int y;
  void gety()
  {
-     cout<<"enter breadth of rectangle: "<<endl;
+     cout<<"Enter width of rectangle: "<<endl;
      cin>>y;
  }
 };
-class area :public length,public breadth//the drived class from length and breadth
+class area :public length,public width
 {
 public:
 void result()
 {
-    cout<<"area of rectangle is : "<<length::x * breadth::y;//used scope resolution to
-                                                            //to neglect ambuigity
+    cout<<"Area of rectangle is : "<<length::x * width::y;
 }
 };
 int main()
 {
-    area obj1; //object of derived class area
+    area obj1;
     obj1.getx();
     obj1.gety();
     obj1.result();
